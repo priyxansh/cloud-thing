@@ -1,6 +1,7 @@
 import Container from "~/components/global/Container";
 import NavBar from "./navbar";
 import SiteLogo from "~/components/global/SiteLogo";
+import ThemeToggler from "~/components/global/ThemeToggler";
 
 const Header = () => {
   return (
@@ -8,6 +9,9 @@ const Header = () => {
       <Container className="flex items-center gap-4">
         <SiteLogo />
         <NavBar />
+        <div className="ml-auto flex items-center gap-2">
+          <ThemeToggler />
+        </div>
       </Container>
     </header>
   );
