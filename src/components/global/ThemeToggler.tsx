@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import { Button } from "../ui/button";
 import Hint from "./Hint";
 import { Sun, Moon } from "lucide-react";
+import { useEffect, useState } from "react";
 
 type ThemeTogglerProps = {
   className?: string;
@@ -18,6 +19,15 @@ const ThemeToggler = ({
 }: ThemeTogglerProps) => {
   // Access the theme and setTheme function from the useTheme hook
   const { theme, setTheme } = useTheme();
+
+  // State to check if the component is mounted to avoid hydration mismatch
+  const [mounted, setMounted] = useState(false);
+
+  // After mounting, set the mounted state to true
+  useEffect(() => setMounted(true), []);
+
+  // If the component is not mounted, return null
+  if (!mounted) return null;
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");

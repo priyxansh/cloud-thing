@@ -26,9 +26,9 @@ const Hint = ({
   return (
     <TooltipProvider delayDuration={delayDuration}>
       <Tooltip>
-        <TooltipTrigger asChild={asChild} >{trigger}</TooltipTrigger>
+        <TooltipTrigger asChild={asChild}>{trigger}</TooltipTrigger>
         <TooltipContent side={side} align={align}>
-          <TooltipArrow className="fill-secondary"/>
+          <TooltipArrow className="fill-accent" />
           {content}
         </TooltipContent>
       </Tooltip>
