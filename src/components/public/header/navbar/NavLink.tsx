@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Button } from "~/components/ui/button";
 
 type NavLinkProps = {
   label: string;
@@ -14,12 +15,18 @@ const NavLink = ({ label, path, className }: NavLinkProps) => {
   const isActive = pathname === path;
 
   return (
-    <Link
-      href={path}
-      className={`${className} ${isActive ? "font-medium underline" : ""} text-sm underline-offset-4 hover:underline hover:decoration-primary`}
+    <li
+      className={`list-none ${className}`}
     >
-      <span>{label}</span>
-    </Link>
+      <Button variant={"link"} asChild className="text-foreground w-full px-0 sm:px-2 font-medium">
+        <Link
+          href={path}
+          className={`${isActive ? "decoration-primary font-semibold text-primary" : ""} underline-offset-4 hover:decoration-primary hover:sm:underline text-sm`}
+        >
+          <span className="block w-full text-left">{label}</span>
+        </Link>
+      </Button>
+    </li>
   );
 };
 

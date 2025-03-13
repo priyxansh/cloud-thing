@@ -9,8 +9,8 @@ const SiteLogo = () => {
   return (
     <Link href={`/`} className="relative flex items-center justify-center">
       <h1 className="text-lg font-semibold text-primary sm:text-xl sm:font-bold">
-        <span className="text-foreground">{firstWord}</span>
-        <span>{lastWord}</span>
+        <span>{firstWord}</span>
+        <span className="text-foreground">{lastWord}</span>
       </h1>
     </Link>
   );
