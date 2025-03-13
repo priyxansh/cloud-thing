@@ -15,6 +15,7 @@ import NavLink from "./NavLink";
 import SiteLogo from "~/components/global/SiteLogo";
 import ButtonContainer from "~/components/global/ButtonContainer";
 import ThemeToggler from "~/components/global/ThemeToggler";
+import AnimatedTagline from "./AnimatedTagline";
 const NavSheet = () => {
   return (
     <Sheet>
@@ -23,7 +24,7 @@ const NavSheet = () => {
           <Menu size={24} />
         </Button>
       </SheetTrigger>
-      <SheetContent className="p-0 sm:hidden flex flex-col gap-0">
+      <SheetContent className="flex flex-col gap-0 p-0 sm:hidden">
         <VisuallyHidden>
           <SheetHeader>
             <SheetTitle></SheetTitle>
@@ -36,7 +37,7 @@ const NavSheet = () => {
             <X size={16} />
           </SheetClose>
         </div>
-        <div className="flex w-full flex-col gap-4 px-4 pt-8 flex-grow pb-3">
+        <div className="flex w-full flex-grow flex-col gap-4 px-4 pb-3 pt-8">
           <ul className="flex w-full flex-col">
             {NAV_ROUTES.map((route) => {
               return (
@@ -51,12 +52,7 @@ const NavSheet = () => {
           </ul>
           <div className="h-[1px] w-full bg-muted"></div>
           <div className="cta-container mt-2 w-full">
-            <h2 className="flex w-full flex-wrap items-center justify-center gap-1 text-center text-sm">
-              <span className="font-normal">Drop your files. </span>
-              <span className="font-medium underline decoration-primary">
-                {"We've got them."}
-              </span>
-            </h2>
+            <AnimatedTagline />
             <ButtonContainer className="mt-4 flex-col gap-2">
               <Button variant="default" className="w-4/5" size={"sm"}>
                 Get Started
@@ -69,7 +65,7 @@ const NavSheet = () => {
               </Button>
             </ButtonContainer>
           </div>
-          <div className="mt-auto ml-auto">
+          <div className="ml-auto mt-auto">
             <ThemeToggler />
           </div>
         </div>
